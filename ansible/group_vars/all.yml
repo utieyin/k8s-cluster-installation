@@ -20,3 +20,6 @@
 
 # Role: openebs
 #openebs_enabled: true
+
+# Role: docker-cache
+#docker-cache_enabled: true
