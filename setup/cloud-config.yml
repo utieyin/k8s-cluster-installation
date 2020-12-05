@@ -9,14 +9,14 @@ locale: 'en_AU.UTF-8'
 
 ## Set the timezone
 ## Value of 'timezone' must exist in /usr/share/zoneinfo
-timezone: 'Australia/Melbourne'
+timezone: 'Europe/London'
 
 apt_preserve_sources_list: true
 apt_update: true
 apt_upgrade: true
 
 users:
-  - name: pi
+  - name: timi
     primary-group: users
     shell: /bin/bash
     sudo: ALL=(ALL) NOPASSWD:ALL
@@ -30,8 +30,7 @@ users:
     lock_passwd: true
     ssh_pwauth: false
     ssh_authorized_keys:
-      - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCoXuKrmgKM7kHY6dirVdL+C/ofLFZ4kJHCoBb0KkNY8/DPLagc7gSDKidUwgTImsjtJ0u3W4KI+APsbQA8CkcGGnCRZRJObk2Bq8j5DJPizHYB8sReD27V4VB+0r7rEsTMhVJcd/+6QOCLxGAFWATjs6dDy0PRO/0lB3mhtpYApcnsQtFF/Vk7XteUzVTj1UH5cQjVFTPiVui4AaLKgCecDANpSuYBXV5UZxgthR3RlVXCR//mCwQsLBGLPlSdgG0E6EZ8se9KJ3PKOuXLs23uI7UYpzVftNpaOYHldKjHTe0KcIxbTLHdpLTIaQqdEOpcsgudZ9wKLci2cC/RpX2hxB1vwX6sCi0kfp/e172anClPH5cN5jyAkH3in2mM1Xw0H3MLThncpg6qGFvEBDLl+xowFkdNEA/0jyUwCAabKaYfoM79w4e+UPH12C39rJ+Ew7eVPj6LDD9B0Aqrbozd/I+WQMqk7tFtK7w3gFDw6JDGPyTv0Vca4SrMDpR60G9ybkB1hMV5h1J4Y/WOb1YYGamLF9SxnCuKFfmzDVLfK4jI8a0t3EWJaSYskIIIqQZvE9ynU1ssXrIrvQmaIMTfsUCBqBbnmaeqpF4MZf4YTGi68/fYXKt6b8goRNZ7dWagET6gGHM6HoYaFtCWEKbe/axO7tVjuKQWZjgmV4T81w== dreamappsoftware@gmail.com'
-
+      - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCo5pLMQUVHoHRG0oEbUJGqbp3Ry5huqvSofXm60+aZ6gJ3H/NcQc69nJwgp08kCFaoEpDi+/RHW4wTgy5kvV8HwaC+gFEnwwUQgFcoU7NcZ3BjMk15wRlrQCxU1YCWKHeesoHMM39eHpCaKVc+PMTjeO3xDtG4pAxvlSAna+vWuAmyg1lusJkDNtwGGyNKyFPw/0uTX1CNOdOLc27VopWVUfONRiXlVq7xpiRSmZbmHRB2TqiX31DkQx9n+iOnJm2cNf6ztMLZikegRkH/TmDeNN3x34ahqG+v/yRL7sqodUICeuPYE0jf6ecQnax5Hlg4mRzVDRcOa20wPkTSbIsnZ1StkwPFt7NIFglyo2mtMAadqjX3QOLQC+T5he12zKltAFMMFYBan29t/NeuoRos00vdqN0g8DwgJLu8zLuGb7jzwW94h7RuLNuPLMMynloBCNJ2WsPbwxPc/HYPaklL5bAUgEmlXELVuj38WxDBDhfJI1sXgJjaCE2dRhsiXl9tCG5Ru+gs31rDw8dt4FYwxQvtKXmEeZA8C+zu5upaW9g4swIoV5gBzG7R8lfmBRdwgS1UpgVXbMIZG3cayjEsOKtZxfWfdxHdXjzy4BkrSNwJo38nWBEPuRa29HDmZMyWrafWI2bokV44YJSiFy9+y5HXFcf47LJWPxvXIes6pQ== Edun@Eduns-MacBook-Air.local'
 write_files:
   - path: /etc/netplan/50-cloud-init.yaml
     permissions: '0644'
@@ -41,8 +40,8 @@ write_files:
         ethernets:
           eth0:
             addresses:
-              - 192.168.1.121/24
-            gateway4: 192.168.1.1
+              - 192.168.0.121/24
+            gateway4: 192.168.0.1
             nameservers:
               addresses:
                 - 1.1.1.1
